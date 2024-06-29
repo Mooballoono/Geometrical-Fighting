@@ -9,7 +9,7 @@ func _ready():
 	boss1.dead.connect(_on_boss_1_dead)
 	boss1.position = Vector2(100,100)
 	$Enemies.add_child(boss1)
-	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	pass
 
 func _process(_delta):
