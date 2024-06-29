@@ -27,5 +27,4 @@ func _on_boss_1_dead():
 	var boss1 = boss1_scene.instantiate() as StaticBody2D
 	boss1.dead.connect(_on_boss_1_dead)
 	boss1.position = Vector2(rng.randi_range(0,1200),rng.randi_range(0,700))
-	print("spawned")
 	$Enemies.call_deferred("add_child",boss1)

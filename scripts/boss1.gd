@@ -25,10 +25,8 @@ func _process(_delta):
 func hit(damage):
 	health -= damage
 	health_percent = float(health/max_health)
-	print(health_percent*100)
 	var health_bar_index: int = ceil(health_percent*len(files))
 	$HealthBarSprite2D.texture = load(files[health_bar_index])
 	if health <= 0:
-		print("dead")
 		dead.emit()
 		queue_free()
