@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://gml67recnequ"]
+[gd_scene load_steps=3 format=3 uid="uid://gml67recnequ"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7jncj"]
 [ext_resource type="PackedScene" uid="uid://bs088ww010jfq" path="res://scenes/player.tscn" id="2_ayd13"]
-[ext_resource type="PackedScene" uid="uid://j34uwef5uhip" path="res://scenes/enemies/boss1.tscn" id="3_c8m5u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7jncj")
@@ -16,7 +15,5 @@ position_smoothing_enabled = true
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Boss1" parent="Enemies" instance=ExtResource("3_c8m5u")]
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
