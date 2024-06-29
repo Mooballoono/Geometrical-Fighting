@@ -10,7 +10,7 @@ radius = 301.846
 script = ExtResource("1_lomec")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.03, 0.03)
+scale = Vector2(2, 2)
 texture = ExtResource("2_r4try")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

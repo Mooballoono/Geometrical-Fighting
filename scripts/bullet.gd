@@ -10,7 +10,8 @@ func _process(delta):
 	position += direction * speed * delta
 
 func _on_body_entered(body:Node2D):
-	print("hit")
-	if body.has_method('hit'):
-		body.hit(damage)
-	queue_free()
+	if body.is_in_group("ENEMIES"):
+		print("hit")
+		if body.has_method('hit'):
+			body.hit(damage)
+		queue_free()

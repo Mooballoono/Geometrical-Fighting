@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdkgn05woqaa"
-path="res://.godot/imported/aim.png-2605de3b67ff07b602a90a1e284635f0.ctex"
+uid="uid://p0821w1d3v1k"
+path="res://.godot/imported/boss1.png-5126bdf57cd04f8da625baffd1a0e92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/aim.png"
-dest_files=["res://.godot/imported/aim.png-2605de3b67ff07b602a90a1e284635f0.ctex"]
+source_file="res://graphics/boss1.png"
+dest_files=["res://.godot/imported/boss1.png-5126bdf57cd04f8da625baffd1a0e92a.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
