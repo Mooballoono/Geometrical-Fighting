@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://gml67recnequ"]
+[gd_scene load_steps=9 format=3 uid="uid://gml67recnequ"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7jncj"]
 [ext_resource type="Texture2D" uid="uid://b2drhb6wiwcgy" path="res://graphics/grid.png" id="1_ho841"]
 [ext_resource type="Texture2D" uid="uid://bsyov2jlny8og" path="res://graphics/wall.png" id="2_2dll6"]
 [ext_resource type="PackedScene" uid="uid://bs088ww010jfq" path="res://scenes/player.tscn" id="2_ayd13"]
+[ext_resource type="PackedScene" uid="uid://no1oskrrh10w" path="res://scenes/enemies/enemy1.tscn" id="5_7kub3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_24d04"]
 texture = ExtResource("1_ho841")
@@ -36,10 +37,14 @@ script = ExtResource("1_7jncj")
 position = Vector2(576, 324)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Node2D" parent="Enemies" instance=ExtResource("5_7kub3")]
+position = Vector2(156, 183)
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]

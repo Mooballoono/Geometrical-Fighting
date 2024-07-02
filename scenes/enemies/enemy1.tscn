@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://no1oskrrh10w"]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy1.gd" id="1_7sqhy"]
+[ext_resource type="Texture2D" uid="uid://b0gcnx404sen0" path="res://graphics/enemy1.png" id="1_baj0a"]
+[ext_resource type="Texture2D" uid="uid://f67kub5rjo1e" path="res://graphics/health_bar/health_bar_0003.png" id="2_6wqcy"]
+[ext_resource type="Texture2D" uid="uid://dhrjr8ov2q7oh" path="res://graphics/health_bar/health_bar_0002.png" id="3_3bovg"]
+[ext_resource type="Texture2D" uid="uid://c558lodr176d1" path="res://graphics/health_bar/health_bar_progress.png" id="4_monwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l165q"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uf0db"]
+radius = 407.044
+
+[node name="Node2D" type="RigidBody2D" groups=["ENEMIES"]]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_7sqhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_baj0a")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -31.0
+offset_top = -61.0
+offset_right = 33.0
+offset_bottom = 3.0
+value = 100.0
+texture_under = ExtResource("2_6wqcy")
+texture_over = ExtResource("3_3bovg")
+texture_progress = ExtResource("4_monwp")
+texture_progress_offset = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l165q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uf0db")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
